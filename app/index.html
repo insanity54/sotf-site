@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html ng-app="queue">
+<head>
+    <meta charset="utf-8">
+    <title>SØTƒ</title>
+    <link rel="stylesheet" type="text/css" href="./common/app.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+</head>
+<body>
+
+    <div class="alert">Shadow of the Forgotten</div>
+
+
+    <!-- our players -->
+    <img src="http://162.243.135.43/na/ecrispy"/>
+    <img src="http://162.243.135.43/na/wyurn"/>
+    <img src="http://162.243.135.43/na/doomelfman"/>
+    <img src="http://162.243.135.43/na/wazitsay"/>
+    <img src="http://162.243.135.43/na/scorcherdsg"/>
+    
+    <img src="http://lorempixel.com/400/200/"/>
+    <img src="http://lorempixel.com/400/200/"/>
+    <img src="http://lorempixel.com/400/200/"/>
+    <img src="http://lorempixel.com/400/200/"/>
+    <img src="http://lorempixel.com/400/200/"/>
+    
+    
+    <!-- calendar -->
+    <iframe src="https://www.google.com/calendar/embed?src=jurcbqmuhkk4f9tbff0jupqm7g%40group.calendar.google.com&ctz=America/Los_Angeles" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+    
+    
+    <!-- comments -->
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'shadowoftheforgotten'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
+    
+    
+    <!-- @todo: have Grunt generate these script references -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/firebase/firebase.js"></script>
+    <script src="bower_components/angularfire/dist/angularfire.js"></script>
+
+    <script src="app.js"></script>
+    <!-- bower:js -->
+    <!-- endbower -->
+</body>
+</html>
