@@ -26,7 +26,7 @@ var getSummoner = function getSummoner(region, summoner) {
 }
 
 app.get('/', function(req, res) {
-    res.send('root of roots');
+    res.sendfile(__dirname + '/app/index.html');
 });
 
 
