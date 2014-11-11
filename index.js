@@ -4,14 +4,11 @@ var app = express();
 var server = http.createServer(app);
 var nconf = require('nconf');
 var fs = require('fs');
-//var league_api = require('league-api');
-var PW = require('png-word');
 var league = require('leagueapi');
-//var league_api = require('league-api');
 
 
 nconf.env(['PORT', 'RIOTKEY'])
-     .file({file: 'config.json'});
+    .file({file: 'config.json'});
 
 nconf.defaults({
     'PORT': '5000'

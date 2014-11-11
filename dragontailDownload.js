@@ -8,7 +8,7 @@ var nconf = require('nconf');
 nconf.env(['RIOTKEY'])
      .file({file: 'config.json'});
 
-if (!nconf.get('RIOTKEY')) throw new Error('Riot api key not found in config.json');
+if (!nconf.get('RIOTKEY')) throw new Error('Riot api key not found in config.json or environment variable');
 
 league.init(nconf.get('RIOTKEY'), 'na');
 
@@ -20,17 +20,17 @@ league.Static.getVersions('na', function(err, versions) {
     var latestVersion = versions[0];
 
     // download dragontail
-    //var download = request('http://ddragon.leagueoflegends.com/cdn/dragontail-' + latestVersion + '.tgz')
+    var download = request('http://ddragon.leagueoflegends.com/cdn/dragontail-' + latestVersion + '.tgz')
     var saveFile = '/tmp/dragontail-' + latestVersion + '.tgz';
     
-    //download.on('response', function(response) {
-    //	    console.log(response.statusCode) // 200
-    //	    console.log(response.headers['content-type']) // 'image/png'
-    //})
-    //download.pipe(fs.createWriteStream(saveFile));
+    download.on('response', function(response) {
+    	    console.log(response.statusCode) // 200
+    	    console.log(response.headers['content-type']) // 'image/png'
+    })
+    download.pipe(fs.createWriteStream(saveFile));
 
 
-    //download.on('end', function() {
+    download.on('end', function() {
 	console.log('download done.');
 
 	var archive = new targz().extract(saveFile, '/tmp/dragoon', function(err) {
@@ -61,6 +61,7 @@ league.Static.getVersions('na', function(err, versions) {
 		});
 	    });
 	});
+    });
 });
 
 
